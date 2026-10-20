@@ -4,7 +4,7 @@ function calculateCartTotal(cart) {
   }
   // BUG (cart): the total sums unit prices and ignores the quantity, so it is
   // wrong as soon as a quantity is changed.
-  return cart.reduce((sum, line) => sum + line.price, 0);
+  return cart.reduce((sum, line) => sum + line.price * line.quantity, 0);
 }
 
 function renderCart() {
